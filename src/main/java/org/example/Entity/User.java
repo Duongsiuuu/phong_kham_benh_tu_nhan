@@ -45,4 +45,12 @@ import java.util.Set;
         @JoinColumn(name = "department_id")
         @Getter @Setter
         private Department department;
+
+        public Integer getUserId() {
+            return userId;
+        }
+
+        public void setUserId(Integer userId) {
+            this.userId = userId;
+        }
     }
