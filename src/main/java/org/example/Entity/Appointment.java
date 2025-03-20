@@ -29,6 +29,12 @@ public class Appointment {
     @Getter @Setter
     private String status;
 
+    @Getter @Setter
+    private String relativeName;
+
+    @Getter @Setter
+    private String relativeIdCard;
+
     public int getAppointmentId() {
         return appointmentId;
     }

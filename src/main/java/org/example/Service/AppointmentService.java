@@ -1,4 +1,3 @@
-// src/main/java/org/example/Service/AppointmentService.java
 package org.example.Service;
 
 import org.example.Entity.Appointment;
@@ -35,6 +34,12 @@ public class AppointmentService {
 
         appointment.setUser(user);
         appointment.setDepartment(department);
+
+        if (!forSelf) {
+            if (appointment.getRelativeName() == null || appointment.getRelativeIdCard() == null) {
+                throw new IllegalArgumentException("Relative name and ID card must be provided for relative appointments.");
+            }
+        }
 
         return appointmentRepository.save(appointment);
     }
